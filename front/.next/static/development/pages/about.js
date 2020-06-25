@@ -65,7 +65,7 @@ var About = function About() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!*******************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fabout&absolutePagePath=D%3A%5Cgithub%5Creact-nodebird%5Cfront%5Cpages%5Cabout.js ***!
   \*******************************************************************************************************************************/
@@ -88,5 +88,5 @@ module.exports = dll_4cbc3223160d403191c6;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=about.js.map
