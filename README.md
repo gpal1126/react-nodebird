@@ -49,5 +49,5 @@ $ npm i -D eslint@5.16.0
 ### eslint 관련 플러그인 특정 버전 설치
 $ npm i -D eslint-plugin-import@2.18.2 eslint-plugin-react@7.14.3 eslint-plugin-react-hooks@1.7.0  
 
-### Ant Design 설치
-$ npm i antd
+### Ant Design 특정 버전 설치
+$ npm i antd@3.23.1
