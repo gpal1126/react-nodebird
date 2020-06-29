@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
-import Head from 'next/head';
-import AppLayout from '../components/AppLayout';
+import React, { useState, useCallback, memo } from 'react';
 import { Form, Input, Checkbox, Button } from 'antd';
+
+//메모를 이용한 PureComponent(최적화) 적용
+const TextInput = memo(({value, onChange}) => {
+    return (
+        <Input value={value} required onChange={onChange} />
+    );
+});
 
 const Signup = () => {
 
@@ -17,9 +22,9 @@ const Signup = () => {
     //커스텀 훅
     const useInput = (initValue = null) => {
         const [value, setter] = useState(initValue);
-        const handler = (e) => {
+        const handler = useCallback((e) => {
             setter(e.target.value);
-        };
+        }, []);
         return [value, handler];
     };
 
@@ -27,7 +32,7 @@ const Signup = () => {
     const [nickname, onChangeNickname] = useInput('');
     const [password, onChangePassword] = useInput('');
 
-    const onSubmit = (e) => {
+    const onSubmit = useCallback((e) => {
         //e.preventDefault();
         if (password !== passwordCheck) {
             return setPasswordError(true);
@@ -35,15 +40,19 @@ const Signup = () => {
         if (!term) {
             return setTermError(true);
         }
-        console.log({
+        /* console.log({
             id,
             nickname,
             password,
             passwordCheck,
             term,
-        });
-    };
+        }); */
+    }, [password, passwordCheck, term]);
     
+    /*
+    props로 넘겨주는 함수는 useCallback이 필수!
+    함수 내부에서 쓰는 state 값은 deps 배열에 넣자
+    */
 
     /* const onChangeId = (e) => {
         setId(e.target.value);
@@ -57,28 +66,24 @@ const Signup = () => {
         setPassword(e.target.value);
     }; */
 
-    const onChangePasswordCheck = (e) => {
+    const onChangePasswordCheck = useCallback((e) => {
         setPasswordError(e.target.value !== password);
         setPasswordCheck(e.target.value);
-    };
+    }, [password]);
 
-    const onChangeTerm = (e) => {
+    const onChangeTerm = useCallback((e) => {
         setTermError(false);
         setTerm(e.target.checked);
-    };
+    }, []);
 
     return (
         <>
-        <Head>
-            <title>NodeBird</title>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.3.5/antd.css" />
-        </Head>
-        <AppLayout>
-            <Form onFinish={onSubmit} style={{ padding: 10 }}>
+            <Form onSubmit={onSubmit} style={{ padding: 10 }}>
                 <div>
                     <label htmlFor="user-id">아이디</label>
                     <br />
-                    <Input name="user-id" value={id} required onChange={onChangeId} />
+                    {/* <TextInput name="user-id" value={id} onChange={onChangeId} /> */}
+                    <Input name="user-id" value={id} required onChange={onChangeId} /> 
                 </div>
                 <div>
                     <label htmlFor="user-nickname">닉네임</label>
@@ -104,7 +109,6 @@ const Signup = () => {
                     <Button type="primary" htmlType="submit">가입하기</Button>
                 </div>
             </Form>
-        </AppLayout>
         </>
     );
 }
