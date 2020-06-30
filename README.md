@@ -51,3 +51,26 @@ $ npm i -D eslint-plugin-import@2.18.2 eslint-plugin-react@7.14.3 eslint-plugin-
 
 ### Ant Design 특정 버전 설치
 $ npm i antd@3.23.1
+
+### prop-types 특정 버전 설치 : props에서 타입 체크(좀 더 견고하게 만듬)
+$ npm i prop-types@15.7.2  
+
+
+### * pages : 실제 컴포넌트  
+### * _document.js : html, head, body 담당  
+### * _app.js : root  
+### * _error.js : 에러 담당  
+
+### Redux : 흩어져 있는 state 값들을 모아서 관리, 안정성, state 통제 용이  
+```
+{
+    isLoggedIn : false, //로그인 여부(state) => A, C
+    user: {}, //로그인한 사용자(state) => B, C
+    mainPosts: [], //메인 게시글들(state) => C
+    ...
+} => store
+```
+### - store : state, action, reducer가 합쳐진 개념
+### - Action -> state를 변경하는 행동   ex) 로그인 액션
+### - Dispatch -> Action을 실행     ex) 로그인 액션 dispatch
+### - Reducer -> Action의 결과로 state를 어떻게 변경할지 정의   ex) 로그인 액션 dispatch시 -> isLoggedIn state를 true로

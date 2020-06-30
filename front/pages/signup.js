@@ -1,12 +1,23 @@
 import React, { useState, useCallback, memo } from 'react';
 import { Form, Input, Checkbox, Button } from 'antd';
+import PropTypes from 'prop-types';
 
 //메모를 이용한 PureComponent(최적화) 적용
-const TextInput = memo(({value, onChange}) => {
+/* const TextInput = memo(({value, onChange}) => {
     return (
         <Input value={value} required onChange={onChange} />
     );
-});
+}); */
+
+const TextInput = ({value}) => {
+    return (
+        <div>{value}</div>
+    );
+};
+
+TextInput.propsTypes = {
+    value: PropTypes.string,
+};
 
 const Signup = () => {
 
@@ -79,6 +90,7 @@ const Signup = () => {
     return (
         <>
             <Form onSubmit={onSubmit} style={{ padding: 10 }}>
+                <TextInput value="135" />
                 <div>
                     <label htmlFor="user-id">아이디</label>
                     <br />

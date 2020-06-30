@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -227,29 +227,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 
 
 var _this = undefined,
     _jsxFileName = "D:\\github\\react-nodebird\\front\\pages\\signup.js";
 
 
+
  //메모를 이용한 PureComponent(최적화) 적용
 
-var TextInput = Object(react__WEBPACK_IMPORTED_MODULE_1__["memo"])(function (_ref) {
-  var value = _ref.value,
-      onChange = _ref.onChange;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
-    value: value,
-    required: true,
-    onChange: onChange,
+/* const TextInput = memo(({value, onChange}) => {
+    return (
+        <Input value={value} required onChange={onChange} />
+    );
+}); */
+
+var TextInput = function TextInput(_ref) {
+  var value = _ref.value;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 14,
       columnNumber: 9
     }
-  });
-});
+  }, value);
+};
+
+TextInput.propsTypes = {
+  value: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string
+};
 
 var Signup = function Signup() {
   //const [id, setId] = useState('');
@@ -356,14 +365,22 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 92,
       columnNumber: 13
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(TextInput, {
+    value: "135",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 93,
+      columnNumber: 17
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
@@ -371,14 +388,14 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 95,
       columnNumber: 21
     }
   }, "\uC544\uC774\uB514"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 96,
       columnNumber: 21
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -389,14 +406,14 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 98,
       columnNumber: 21
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 100,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
@@ -404,14 +421,14 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 101,
       columnNumber: 21
     }
   }, "\uB2C9\uB124\uC784"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 102,
       columnNumber: 21
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -422,14 +439,14 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 103,
       columnNumber: 21
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 105,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
@@ -437,14 +454,14 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 106,
       columnNumber: 21
     }
   }, "\uBE44\uBC00\uBC88\uD638"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 107,
       columnNumber: 21
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -456,14 +473,14 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 108,
       columnNumber: 21
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 110,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
@@ -471,14 +488,14 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 111,
       columnNumber: 21
     }
   }, "\uBE44\uBC00\uBC88\uD638 \uD655\uC778"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 112,
       columnNumber: 21
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -490,7 +507,7 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 113,
       columnNumber: 21
     }
   }), passwordError && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -500,14 +517,14 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 114,
       columnNumber: 39
     }
   }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uC77C\uCE58\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 116,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Checkbox"], {
@@ -517,7 +534,7 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 117,
       columnNumber: 21
     }
   }, "\uD68C\uC6D0\uAC00\uC785\uC744 \uB3D9\uC758\uD569\uB2C8\uB2E4."), termError && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -527,7 +544,7 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 118,
       columnNumber: 35
     }
   }, "\uC57D\uAD00\uC5D0 \uB3D9\uC758\uD558\uC154\uC57C \uD569\uB2C8\uB2E4.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -537,7 +554,7 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 120,
       columnNumber: 17
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -546,7 +563,7 @@ var Signup = function Signup() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 121,
       columnNumber: 21
     }
   }, "\uAC00\uC785\uD558\uAE30"))));
@@ -556,7 +573,7 @@ var Signup = function Signup() {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!*******************************!*\
   !*** multi ./pages/signup.js ***!
   \*******************************/
@@ -598,6 +615,17 @@ module.exports = require("core-js/library/fn/array/is-array");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/get-iterator");
+
+/***/ }),
+
+/***/ "prop-types":
+/*!*****************************!*\
+  !*** external "prop-types" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
 
 /***/ }),
 
